@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">DTA_android_tp7</string>
+    <string name="button_true">True</string>
+    <string name="button_false">False</string>
+    <string name="text_question">Question</string>
+    <string name="text_answer" translatable="false">Answer</string>
+    <string name="text_answer_was">La réponse était :</string>
+    <string name="text_question_was">A la question :</string>
+    <string name="text_continue">CONTINUE</string>
+    <string name="text_finish">FINISH</string>
+    <string name="text_answers_count">Nombre de bonnes réponses :</string>
 </resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DTA_android_tp7</string>
+    <string name="button_false">Faux</string>
+    <string name="button_true">Vrai</string>
+    <string name="question">Aimez-vous cette application ?</string>
+</resources>
