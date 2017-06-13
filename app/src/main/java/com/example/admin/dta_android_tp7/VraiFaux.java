@@ -6,12 +6,19 @@ package com.example.admin.dta_android_tp7;
 
 public class VraiFaux {
 
+    public static VraiFaux questions[] = new VraiFaux[] {
+            new VraiFaux("La nuit, il fait :", "jour", "noir", false),
+            new VraiFaux("Linus Torvalds à crée :", "Linux", "Windows", false),
+            new VraiFaux("Java est un langage :", "à prototype", "objet", false),
+    };
+
     private String question;
     private String purpose1;
     private String purpose2;
     private boolean answer;
 
-    public VraiFaux(String question, String purpose1, String purpose2, boolean response) {
+    public VraiFaux(String question, String purpose1, String purpose2, boolean response)
+    {
         setQuestion(question);
         setPurpose1(purpose1);
         setPurpose2(purpose2);
@@ -19,7 +26,9 @@ public class VraiFaux {
     }
 
 
-    public void setQuestion(String question) {
+
+    public void setQuestion(String question)
+    {
         this.question = question;
     }
 
@@ -38,7 +47,10 @@ public class VraiFaux {
         this.answer = answer;
     }
 
-    public String getQuestion() {
+
+
+    public String getQuestion()
+    {
         return question;
     }
 
@@ -53,6 +65,7 @@ public class VraiFaux {
     }
 
     public boolean getAnswer() {
+
         return answer;
     }
 }

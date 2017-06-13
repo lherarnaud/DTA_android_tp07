@@ -14,8 +14,9 @@ public class ActivitePage3 extends AppCompatActivity {
 
         // On récupère l'intent qui a lancé cette activité
         Intent intent = getIntent();
-        String score = String.valueOf(intent.getIntExtra("finalScore", 0));
-        TextView result = (TextView)findViewById(R.id.result_finalScore);
-        result.setText(score);
+        TextView ctl_textView_result = (TextView)findViewById(R.id.result_finalScore);
+
+        String progress = intent.getIntExtra("finalScore", 0) + "/" + intent.getIntExtra("finalTotal", 0);
+        ctl_textView_result.setText(progress);
     }
 }

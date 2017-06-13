@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ActivitePage2 extends AppCompatActivity {
 
     private boolean hasNextQuestion;
-    private int score;
 
     public ActivitePage2() {
         hasNextQuestion = true;
@@ -21,34 +22,29 @@ public class ActivitePage2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activite_page2);
 
-        // On récupère l'intent qui a lancé cette activité
-        Intent intent = getIntent();
+        showResponse(getIntent());
+    }
+
+    private void showResponse(Intent intent) {
+        TextView ctl_textView_question = (TextView)findViewById(R.id.answeredQuestion);
+        TextView ctl_textView_answer = (TextView)findViewById(R.id.goodAnswer);
+        TextView ctl_textView_currentScore = (TextView)findViewById(R.id.result_currentScore);
+        Button ctl_button_continue = (Button)findViewById(R.id.button_continue);
 
         hasNextQuestion = intent.getBooleanExtra("hasNext", true);
-        score = intent.getIntExtra("score", 0);
+        String progress = intent.getIntExtra("score", 0) + "/" + intent.getIntExtra("total", 0);
 
-        String questionText = intent.getStringExtra("question");
-        String answerText = intent.getStringExtra("answer");
-        TextView questionControl = (TextView)findViewById(R.id.answeredQuestion);
-        TextView answerControl = (TextView)findViewById(R.id.goodAnswer);
-
-        questionControl.setText(questionText);
-        answerControl.setText(answerText);
-
-        Button continueButton = (Button)findViewById(R.id.button_continue);
-        continueButton.setText(hasNextQuestion ? R.string.text_continue : R.string.text_finish);
-
+        ctl_textView_question.setText(intent.getStringExtra("question"));
+        ctl_textView_answer.setText(intent.getStringExtra("answer"));
+        ctl_textView_currentScore.setText(progress);
+        ctl_button_continue.setText(hasNextQuestion ? R.string.text_continue : R.string.text_finish);
     }
 
     public void button_continue(View view) {
-        if(hasNextQuestion) {
-            finish();
-        }
-        else
-        {
-            Intent intent = new Intent(ActivitePage2.this, ActivitePage3.class);
-            intent.putExtra("finalScore", score);
-            startActivity(intent);
-        }
+        Intent returnIntent = new Intent();
+
+        returnIntent.putExtra("hasNextQuestion", hasNextQuestion);
+        setResult(RESULT_OK, returnIntent);
+        finish();
     }
 }

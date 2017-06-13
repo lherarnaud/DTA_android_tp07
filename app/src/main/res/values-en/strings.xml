@@ -3,5 +3,11 @@
     <string name="app_name">DTA_android_tp7</string>
     <string name="button_false">False</string>
     <string name="button_true">True</string>
-    <string name="question">Do you like this app ?</string>
+    <string name="text_question_was">On question :</string>
+    <string name="text_finish">FINISH</string>
+    <string name="text_question">Question</string>
+    <string name="text_continue">CONTINUE</string>
+    <string name="text_answers_count">Good answers count :</string>
+    <string name="text_answer_was">The response was :</string>
+    <string name="text_answer">Response</string>
 </resources>
